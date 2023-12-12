@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Devise } from './model/devise';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,23 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'devise-project';
+  title(title: any) {
+    throw new Error('Method not implemented.');
+  }
+
+  
+
+  actions:Array<any> =
+  [
+  
+    
+
+  ]
+
+  actionCourante:any;
+
+  setActionCourante(a :any)
+  {
+    this.actionCourante=a;  
+  }  
 }

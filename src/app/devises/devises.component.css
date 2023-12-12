@@ -1,0 +1,38 @@
+/* Style for the "Valider" button */
+.bg-indigo-500 {
+    background-color: #667eea;
+    color: #fff;
+  }
+  
+  .bg-indigo-500:hover {
+    background-color: #5a67d8;
+  }
+  
+  /* Style for the "Editer" button */
+  .text-blue-500 {
+    color: #3490dc;
+  }
+  
+  .text-blue-500:hover {
+    color: #2779bd;
+  }
+  
+  /* Style for the "Supprimer" button */
+  .text-red-500 {
+    color: #e3342f;
+  }
+  
+  .text-red-500:hover {
+    color: #cc1f1a;
+  }
+  
+  /* Style for the "Echange" button */
+  .bg-green-500 {
+    background-color: #48bb78;
+    color: #fff;
+  }
+  
+  .bg-green-500:hover {
+    background-color: #38a169;
+  }
+  

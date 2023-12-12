@@ -1,0 +1,76 @@
+<!-- Partie de modification d'une devise en mode édition -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<div *ngIf="modeEdition == true" class="mt-5 container text-center">
+  <h1 class="text-2xl font-bold mb-4">Modification Devise</h1>
+
+  <form #deviseForm="ngForm" (ngSubmit)="validerFormulaire(deviseForm)" class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="id" class="text-sm font-medium text-gray-700">ID</label>
+        <input id="id" name="id" type="text" [(ngModel)]="deviseCourante.id" required readonly class="form-control mx-auto" />
+      </div>
+
+      <div class="form-group">
+        <label for="nomDevise" class="text-sm font-medium text-gray-700">NOM</label>
+        <input name="nomDevise" type="text" [(ngModel)]="deviseCourante.nomDevise" required readonly class="form-control mx-auto" />
+      </div>
+
+      <div class="form-group">
+        <label for="tauxEchange" class="text-sm font-medium text-gray-700">Taux de change:</label>
+        <input type="text" name="tauxEchange" [(ngModel)]="deviseCourante.tauxEchange" class="form-control mx-auto" />
+      </div>
+
+      <div class="form-group text-center mt-4">
+        <button type="submit" class="btn btn-primary" [disabled]="!deviseForm.form.valid">
+          Valider
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<!-- Partie de liste des devises -->
+<div class="mt-5 container text-center">
+  <h1 class="text-2xl font-bold mb-4">Liste des devises</h1>
+
+  <table class="table table-bordered mx-auto">
+    <thead>
+      <tr>
+        <th class="p-2">Nom de la devise</th>
+        <th class="p-2">Taux de change</th>
+        <th class="p-2" colspan="2">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let d of devises">
+        <td class="p-2">{{d.nomDevise}}</td>
+        <td class="p-2">{{d.tauxEchange}}</td>
+        <td class="p-2">
+          <button (click)="editerDevise(d)" class="btn btn-success">
+            Editer
+          </button>
+        </td>
+        <td class="p-2">
+          <button (click)="supprimerDevise(d)" class="btn btn-danger">
+            Supprimer
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="flex items-center justify-center mt-4">
+    <a routerLink="/ajouterDevises" class="mx-2">
+      <button class="btn btn-primary">
+        Ajouter Devises
+      </button>
+    </a>
+
+    <a routerLink="/exchangeDevise" class="mx-2">
+      <button class="btn btn-primary">
+        Echange Devises
+      </button>
+    </a>
+  </div>
+</div>

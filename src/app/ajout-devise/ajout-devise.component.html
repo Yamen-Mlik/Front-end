@@ -1,0 +1,79 @@
+<div class="max-w-md mx-auto mt-8 p-4 bg-white shadow-md rounded-md text-center">
+  <h1 class="text-2xl font-bold mb-4">Fiche Devise</h1>
+  <!-- Your content goes here -->
+
+
+  <form #deviseForm="ngForm" (ngSubmit)="validerFormulaire(deviseForm)">
+    
+    <div class="grid grid-cols-2 gap-4">
+      
+      <div class="mb-4">
+        <label for="nomDevise" class="text-sm font-medium text-gray-700">Nom Devise </label>
+        <input type="text" name="nomDevise" [(ngModel)]="nouvelleDevise.nomDevise" required class="mt-1 p-2 border rounded-md w-full" />
+      </div>
+
+      <div class="mb-4">
+        <label for="tauxEchange" class="text-sm font-medium text-gray-700">Taux de Change :</label>
+        <input type="text" name="tauxEchange" [(ngModel)]="nouvelleDevise.tauxEchange" required class="mt-1 p-2 border rounded-md w-full" />
+      </div>
+    </div>
+
+    <div class="flex justify-center items-center mt-4">
+      <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md mr-2" [disabled]="!deviseForm.form.valid">
+        Ajouter
+      </button>
+
+      <button type="button" (click)="deviseForm.reset()" class="bg-blue-300 text-gray-700 px-4 py-2 rounded-md">
+        Effacer
+      </button>
+    </div>
+    <div class="flex items-center justify-center mt-10">
+      <a href="/devises" class="text-white">
+        <button type="button" class="bg-blue-500 text-white px-4 py-2 rounded-md ml-2">Liste des Devises</button>
+      </a></div>
+    <div class="flex items-center justify-center mt-10">
+      <a routerLink="/exchangeDevise">
+        <button class="bg-blue-500 text-white px-4 py-2 rounded-md">Echange</button>
+      </a>
+    </div>
+  </form>
+  
+</div>
+<style>
+  button {
+  background-color: #007bff; /* Updated to blue color */
+  color: #ffffff;
+  padding: 1px 24px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2); /* Updated shadow color */
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: #212f88;
+  box-shadow: 0 6px 12px rgba(0, 123, 255, 0.4); /* Updated shadow color on hover */
+}
+
+
+  .mt-4 {
+    margin-top: 2rem;
+  }
+
+  .mt-2 {
+    margin-top: 1.5rem;
+  }
+
+  .text-green {
+    color: #007bff;
+  }
+
+  .text-blue {
+    color: #007bff;
+  }
+
+  .text-gray {
+    color: #6c757d;
+  }</style>
